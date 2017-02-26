@@ -8,6 +8,7 @@ RUN     add-apt-repository -y -r ppa:chris-lea/node.js
 RUN     rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
 RUN     apt-get -y update
 RUN     apt-get -y install supervisor nginx-light nodejs git wget sudo adduser libfontconfig curl npm 
+RUN     apt-get -y install tcpdump ngrep
 
 RUN npm install --production
 RUN mv ./node_modules ./node_modules.tmp && mv ./node_modules.tmp ./node_modules && npm install
